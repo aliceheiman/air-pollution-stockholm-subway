@@ -1,0 +1,9 @@
+[miniDiSC java tool version 2 output file]
+[Data recorded with miniDiSC SN101607 running firmware 3,42]
+[File start date: 2021.09.23]
+[File start time: 10:12:42]
+
+Time	Number	Size	LDSA	Filter	Diff	
+4,5	554	87,5	2,88	2,68	0,74
+14,5	711	72,4	2,99	2,68	0,88
+24,5	751	69,7	3,04	2,7	0,92
