@@ -45,7 +45,7 @@ def combine_raw_session_dfs(data_folder="sessions_NC"):
 
     # Remove unnamed column and reset index
     # df.drop("Unnamed: 0", axis=1, inplace=True)
-    df = df.reset_index(drop=True, inplace=True)
+    df.reset_index(drop=True, inplace=True)
 
     # Convert timestamp string column into datetime
     df["Timestamp"] = df["Timestamp"].apply(lambda x: datetime.strptime(x, "%Y-%m-%d %H:%M:%S"))
