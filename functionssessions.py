@@ -7,6 +7,7 @@ Session functions for Stockholm Air Pollution project.
 ################################
 # LIBRARIES
 ################################
+from numpy import number
 from functionshelper import *
 
 ################################
@@ -54,7 +55,7 @@ def combine_raw_session_dfs(data_folder="sessions_NC"):
     return df
 
 
-def get_computed_sessions(data_folder="sessions_NC"):
+def get_computed_sessions(data_folder="sessions_NC", disc=False):
     """
     Goes through all sessions and takes the median value for every station record.
 
@@ -107,18 +108,31 @@ def get_computed_sessions(data_folder="sessions_NC"):
                 # Split station_df into different sensors
                 sensors = sorted(list(station_df["Sensor"].unique()))
 
-                # Save median PM2_5
-                pm2_5s = np.array([])
+                if disc:
+                    number_counts = np.array([])
+                else:
+                    # Save median PM2_5
+                    pm2_5s = np.array([])
+                    nc2_5s = np.array([])
 
                 for sensor in sensors:
                     # Pick out sensor df
                     sensor_df = station_df[station_df["Sensor"] == sensor]
 
-                    # Get median for sensor
-                    pm2_5s = np.append(pm2_5s, get_middle_value(sensor_df, "PM2.5"))
+                    if disc:
+                        # Get median for sensor
+                        number_counts = np.append(number_counts, get_middle_value(sensor_df, "Number"))
+                    else:
+                        # Get median for sensor
+                        pm2_5s = np.append(pm2_5s, get_middle_value(sensor_df, "PM2.5"))
+                        nc2_5s = np.append(nc2_5s, get_middle_value(sensor_df, "NC2.5"))
 
-                # Take mean of all PM values
-                PM2_5 = np.mean(pm2_5s)
+                if disc:
+                    NUMBER_COUNT = np.mean(number_counts)
+                else:
+                    # Take mean of all PM values
+                    PM2_5 = np.mean(pm2_5s)
+                    NC2_5 = np.mean(nc2_5s)
 
                 # Combine sensors into single label
                 sensors_label = "".join([str(s) for s in sensors])
@@ -127,12 +141,20 @@ def get_computed_sessions(data_folder="sessions_NC"):
                 date = datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S").strftime("%Y-%m-%d")
                 time = datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S").time()
 
-                rows.append([session_id, timestamp, date, time, station, PM2_5, sensors_label])
+                if disc:
+                    rows.append([session_id, timestamp, date, time, station, NUMBER_COUNT, sensors_label])
+                else:
+                    rows.append([session_id, timestamp, date, time, station, PM2_5, NC2_5, sensors_label])
 
             # Combine all stations into one "averaged" session dataframe
-            session_df = pd.DataFrame(
-                rows, columns=["Session Id", "Timestamp", "Date", "Time", "Station", "PM2.5", "Sensors"]
-            )
+            if disc:
+                session_df = pd.DataFrame(
+                    rows, columns=["Session Id", "Timestamp", "Date", "Time", "Station", "Number", "Sensors"]
+                )
+            else:
+                session_df = pd.DataFrame(
+                    rows, columns=["Session Id", "Timestamp", "Date", "Time", "Station", "PM2.5", "NC2.5", "Sensors"]
+                )
 
             # Add to all sessions
             sessions.append(session_df)
