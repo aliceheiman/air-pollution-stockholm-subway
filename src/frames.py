@@ -9,6 +9,7 @@ Session functions for Stockholm Air Pollution project.
 ################################
 import pandas as pd
 import numpy as np
+import re
 
 from src.util import *
 
@@ -44,6 +45,46 @@ def get_sensor_dfs(date, sensors, period):
         labels.append(file.split("-")[0])
 
     return dfs, labels, data_files
+
+
+def get_disc_df(date, filepath, offset=60):
+    """[summary]
+
+    Returns:
+        dataframe:
+    """
+
+    def fix_timestamp(x):
+        if ".500" in str(x):
+            return datetime.strptime(str(x)[0:19], "%Y-%m-%d %H:%M:%S")
+        else:
+            return x
+
+    disc_df = pd.read_csv(filepath, sep="\t", skiprows=5)
+    disc_df = disc_df.iloc[:, :-1]  # remove last column
+    disc_df["Time"] = disc_df["Time"].apply(lambda x: float(x.replace(",", ".")))  # use . as decimal delimiter
+
+    # Get start time
+    with open(filepath) as f:
+        contents = f.readlines()
+
+    match = re.search(r"\d{2}:\d{2}:\d{2}", contents[3])
+    start_time = match.group()
+
+    # Add timestamp column
+    str_time = date + " " + start_time
+    initial_timestamp = datetime.strptime(str_time, "%Y-%m-%d %H:%M:%S")
+
+    # Get absolute time and offset 60 due to calibration
+    disc_df["Timestamp"] = disc_df["Time"].apply(lambda x: add_secs(initial_timestamp, x + offset))
+
+    # Fix timestamps to whole seconds
+    disc_df["Timestamp"] = disc_df["Timestamp"].apply(lambda x: fix_timestamp(x))
+
+    # Add sensor column
+    disc_df["Sensor"] = "DiSC"
+
+    return disc_df
 
 
 def combine_raw_session_dfs(data_folder="../data/sensor_data"):
@@ -202,13 +243,14 @@ def get_computed_sessions(data_folder="../data/sensor_data", disc=False):
 
 
 def get_calibrate_df(date, folder):
-    # Store all raw session dataframes in array
+    # Store all raw dataframes in array
     calibrate_dfs = []
 
-    # Get session files in folder
-    session_files = sorted(os.listdir(folder))
+    # Get sensirion files in folder
+    sensor_files = sorted(os.listdir(folder))
+    sensirion_files = [s for s in sensor_files if s.lower().endswith(".csv")]
 
-    for i, file_name in enumerate(session_files):
+    for i, file_name in enumerate(sensirion_files):
 
         # Read individual sensor data
         raw_df = pd.read_csv(folder + "/" + file_name, skiprows=1)

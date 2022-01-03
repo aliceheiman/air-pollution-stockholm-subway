@@ -1,8 +1,9 @@
 import numpy as np
+import pandas as pd
 import scipy.stats as stats
 
 ################################
-# STATS FUNCTIONS
+# CENTRAL TENDENCY
 ################################
 
 
@@ -38,7 +39,11 @@ def CI95(x):
     return confidence_interval
 
 
+################################
 # QUANTILES
+################################
+
+
 def Q1(x):
     """First quartile."""
     return x.quantile(0.25)
@@ -69,6 +74,11 @@ def upperLimit(x):
     return Q3(x) + 1.5 * IQR(x)
 
 
+################################
+# OUTLIERS
+################################
+
+
 def outliers(x):
     """Values below lower limit or above upper limit."""
     return sum([sum(x < lowerLimit(x)), sum(x > upperLimit(x))])
@@ -77,17 +87,6 @@ def outliers(x):
 def prcnt_outliers(x):
     """How many outliers in comparison to total samples."""
     return (outliers(x) / len(x)) * 100
-
-
-# SKEW AND KURTOSIS
-def skew(x):
-    """A measure of dataset symmetry."""
-    return stats.skew(x, bias=False)
-
-
-def kurtosis(x):
-    """A measure of outliers."""
-    return stats.kurtosis(x, bias=False)
 
 
 def print_outliers(s_df, station_quantiles, column):
@@ -119,3 +118,100 @@ def print_outliers(s_df, station_quantiles, column):
     print(f"Unique outliers: {sorted(set(outlier_ids))}")
 
     return outlier_ids
+
+
+################################
+# SKEW AND KURTOSIS
+################################
+
+
+def skew(x):
+    """A measure of dataset symmetry."""
+    return stats.skew(x, bias=False)
+
+
+def kurtosis(x):
+    """A measure of outliers."""
+    return stats.kurtosis(x, bias=False)
+
+
+################################
+# ANOVA
+################################
+
+
+def perform_ANOVA(df, param="PM2.5", alpha=0.1):
+    def get_SST(df, param="PM2.5"):
+        """Computes sum of squares total for a dataframe.
+
+        Returns: SST (sum of squares total), SST_df (degrees of freedom)
+        """
+
+        grand_mean = df[param].mean()
+
+        SST = np.sum((df[param] - grand_mean) ** 2)
+        SST_df = len(df) - 1
+
+        return SST, SST_df
+
+    def get_SSW(df, param="PM2.5"):
+        """Computes sum of squares within for a dataframe.
+
+        Returns: SSW (sum of squares within), SSW_df (degrees of freedom)
+        """
+
+        # distance between data point and their respective mean
+        SSW = 0
+
+        for sensor, grp in df.groupby("Sensor"):
+            mean = grp[param].mean()
+            SSW += np.sum((grp[param] - mean) ** 2)
+
+        SSW_df = np.sum(df.groupby("Sensor")[param].count() - 1)
+
+        return SSW, SSW_df
+
+    def get_SSB(df, param="PM2.5"):
+        """Computes sum of squares between for a dataframe.
+
+        Returns: SSB (sum of squares between), SSB_df (degrees of freedom)
+        """
+
+        ## SSB - Sum of squares between. Variation between groups.
+        SSB = 0
+        grand_mean = df[param].mean()
+
+        for sensor, grp in df.groupby("Sensor"):
+            mean = grp[param].mean()
+            records = len(grp)
+
+            SSB += records * ((mean - grand_mean) ** 2)
+
+        SSB_df = len(df["Sensor"].unique()) - 1
+
+        return SSB, SSB_df
+
+    # Compute Sum of Squares
+    SST, SST_df = get_SST(df, param)  # Sum of squares total
+    SSW, SSW_df = get_SSW(df, param)  # Sum of squares within
+    SSB, SSB_df = get_SSB(df, param)  # Sum of squares between
+
+    # F statistic
+    F_statistic = (SSB / SSB_df) / (SSW / SSW_df)
+
+    # F critical
+    F_critical = stats.f.ppf(1 - alpha, SSB_df, SSW_df)
+
+    # P-value
+    p_value = 1 - stats.f.cdf(F_statistic, SSB, SSW)
+
+    # Combine into dataframe
+    headers = ["SST", "SSW", "SSB", "Alpha", "F-stat", "F-crit", "P-value", "F-stat > F-crit", "p-value < alpha"]
+    row = [SST, SSW, SSB, alpha, F_statistic, F_critical, p_value, F_statistic > F_critical, p_value < alpha]
+
+    row = [f"{v} (Significant Difference)" if v == True else v for v in row]
+    row = [f"{v} (Failed to reject Null Hypothesis)" if v == False else v for v in row]
+
+    anova_df = pd.DataFrame(row, headers)
+
+    return anova_df

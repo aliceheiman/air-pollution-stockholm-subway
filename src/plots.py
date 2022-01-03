@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import scipy.stats as stats
 
+from matplotlib import dates
+
 # Matplotlib settings
 plt.style.use("seaborn")
 
@@ -29,6 +31,12 @@ sns.set_theme()
 ################################
 # GENERAL PLOTTING FUNCTIONS
 ################################
+
+
+def format_time_axis():
+    plt.gcf().autofmt_xdate()
+    myFmt = dates.DateFormatter("%H:%M:%S")
+    plt.gca().xaxis.set_major_formatter(myFmt)
 
 
 def plot_sensor_distributions(s_df, title, fig_name=False, bins=False, param="PM2.5", with_textbox=False):
@@ -115,6 +123,25 @@ def plot_QQ_plots(s_df, title, param="PM2.5", fig_name=False):
         ax.set_title(f"Sensor {sensor}", fontsize=14)
 
     plt.suptitle(title, fontsize=16)
+    plt.tight_layout()
+
+    if fig_name:
+        plt.savefig(fig_name)
+
+    plt.show()
+
+
+def plot_sensors_over_time(df, title, param="PM2.5", size=[12, 5], fig_name=False):
+    fig, ax = plt.subplots(figsize=size, dpi=200)
+
+    for label, grp in df.groupby("Sensor"):
+        ax.plot(grp["Timestamp"], grp[param], label=label, linewidth=2)
+
+    ax.set_title(title)
+    ax.set_ylabel(param)
+    ax.legend(fontsize=12, loc=4, frameon=True, facecolor="#fff")
+    format_time_axis()
+
     plt.tight_layout()
 
     if fig_name:
