@@ -7,11 +7,6 @@ General functions for Stockholm Air Pollution project.
 ################################
 # LIBRARIES
 ################################
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-from matplotlib import dates
-import numpy as np
-import pandas as pd
 from datetime import datetime, timedelta
 import os
 
@@ -32,32 +27,58 @@ def get_folder_paths(folder_name):
     return folders
 
 
+def create_folder(folder_name):
+    """Creates a folder if it does not exist and returns the folder name."""
+    if not os.path.exists(folder_name):
+        os.makedirs(folder_name)
+
+    return folder_name
+
+
 ################################
-# FUNCTIONS
+# TIME FUNCTIONS
 ################################
 
+
+def get_timestamp(timestr, date, offset=0):
+    """Converts a string into a datetime object, adding
+
+    Args:
+        timestr (str): Time in format H:M:S
+        date (str): Current date in format Y-m-d
+        offset (int, optional): How many seconds to offset the original timestr. Defaults to 0.
+
+    Returns:
+        datetime: Datetime object from timestr and date with the added offset.
+    """
+    return datetime.strptime(f"{date} {timestr}", "%Y-%m-%d %H:%M:%S") + timedelta(seconds=offset)
+
+
+def add_secs(initial, secs):
+    """Adds x amount of seconds to a timestamp."""
+    return initial + timedelta(seconds=secs)
+
+
+def format_time(date, time_int):
+    # convert int to str
+    str_time = str(time_int)
+
+    # Pad 5:00:00 to 05:00:00
+    if len(str_time) < 6:
+        str_time = "0" + str_time
+
+    # Concatenate date and time
+    str_time = date + " " + str_time
+
+    # Convert string into date time object
+    result = datetime.strptime(str_time, "%Y-%m-%d %H%M%S")
+
+    return result
+
+
 ################################
-# FILTER FUNCTIONS
+# OTHER FUNCTIONS
 ################################
-
-# HELPER FUNCTIONS
-def get_dataframe(sensor, filename):
-    return pd.read_csv(f"./input/Sensor {sensor}/{filename}", skiprows=1, usecols=["Date", "Time"])
-
-
-def get_time_label(timestamp):
-    timestamp = timestamp + 20000
-
-    if 0 < timestamp < (120000):
-        return "AM"  # before lunch
-    if 120000 <= timestamp < 240000:
-        return "PM"  # after lunch
-
-
-def get_date_label(date):
-    date = str(date)
-
-    return date[:4] + "-" + date[4:6] + "-" + date[6:]
 
 
 def get_middle_value(df, column):
@@ -102,49 +123,3 @@ def get_green_line():
     ]
 
     return green_line
-
-
-def get_sessions_by_column(df, column, value):
-    """Returns all rows in dataframe where a column has the specified value."""
-    return df.loc[df[column] == value]
-
-
-def sort_by_green_line(x_list, y_list):
-    """Returns a list of stations and their values in the correct order, as sorted by the green line."""
-
-    # Get green line array
-    green_line = get_green_line()
-
-    # Store indexes of stations
-    indexes = {}
-
-    # Go through stations and their corresponding values
-    for x, y in zip(x_list, y_list):
-        try:
-            # Locate station on green line
-            i = green_line.index(x)
-            if i not in indexes:
-                indexes[i] = []
-
-            # Store information with correct index
-            indexes[i].append((x, y))
-        except:
-            continue
-
-    # Create a new sorted list
-    sorted_line = []
-
-    # Go through every station on green line
-    for i in range(len(green_line)):
-        # If data for station
-        if i in indexes:
-            # Add all data for that station
-            for pair in indexes[i]:
-                sorted_line.append(pair)
-
-    # Extract stations and values into separate arrays
-    sorted_x = [s[0] for s in sorted_line]
-    sorted_y = [s[1] for s in sorted_line]
-
-    # Return storted data
-    return sorted_x, sorted_y
