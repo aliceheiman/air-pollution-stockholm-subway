@@ -1,0 +1,29 @@
+------------[ STATION REPORT ]------------
+Date: 2021-09-29
+
+Route "Alice"
+-Gullmarsplan: 07:22:40
+-Skanstull: 07:30:45
+-Medborgarplatsen: 07:35:10
+-Slussen: 07:38:24
+-Gamla Stan: 07:43:05
+-T-Centralen: 07:48:05
+-Hötorget: 07:51:59
+-Rådmansgatan: 07:55:33
+-Odenplan: 07:59:16
+
+-T-Centralen: 17:18:00
+-Hötorget: 17:20:51
+-Rådmansgatan: 17:24:44
+
+Route "Alicia"
+-Odenplan: 17:28:48
+-St Eriksplan: 17:33:36
+-Fridhemsplan: 17:38:45
+-Thorildsplan: 17:43:13
+-Kristineberg: 17:45:11
+-Alvik: 17:50:31
+-Stora mossen: 17:54:42
+-Abrahamsberg: 17:58:50
+-Brommaplan: 18:06:53
+-Åkeshov: 18:10:58

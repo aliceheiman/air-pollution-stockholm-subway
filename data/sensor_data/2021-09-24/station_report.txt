@@ -1,0 +1,17 @@
+------------[ STATION REPORT ]------------
+Date: 2021-09-24
+
+Route "Alice"
+-Gullmarsplan: 09:20:09
+-Gullmarsplan: 09:38:12
+-Skanstull: 09:50:34
+-Medborgarplatsen: 09:57:35
+-Slussen: 10:06:09
+-Gamla Stan: 10:14:16
+-T-Centralen: 10:23:26
+-Hötorget: 10:30:59
+-Rådmansgatan: 10:38:53
+-Odenplan: 10:47:46
+
+Route "Alicia"
+
