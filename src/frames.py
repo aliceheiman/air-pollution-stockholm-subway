@@ -18,7 +18,7 @@ from src.util import *
 ################################
 
 
-def get_sensor_dfs(date, sensors, period):
+def get_sensor_dfs(date, sensors, period, use_all=False):
     # Load data
     dfs = []
     labels = []
@@ -26,23 +26,26 @@ def get_sensor_dfs(date, sensors, period):
     dir_files = os.listdir(f"../data/sensor_data/{date}/")
     data_files = []
 
-    for file in dir_files:
-        if (file[0] in sensors) and (file.endswith(f"{period}.csv")):
-            data_files.append(file)
+    for file_name in dir_files:
+        if use_all == True and file_name.lower().endswith(".csv"):
+            data_files.append(file_name)
+        else:
+            if (file_name[0] in sensors) and (file_name.endswith(f"{period}.csv")):
+                data_files.append(file_name)
 
     data_files.sort()
 
     # Add timestamps column
-    for file in data_files:
-        df = pd.read_csv(f"../data/sensor_data/{date}/{file}", skiprows=1)
+    for file_name in data_files:
+        df = pd.read_csv(f"../data/sensor_data/{date}/{file_name}", skiprows=1)
         df["Timestamp"] = df["Time"].apply(lambda x: format_time(date, x) + timedelta(hours=2))
 
         # Add label column
-        df["Sensor"] = file[0]
+        df["Sensor"] = file_name[0]
 
         dfs.append(df)
 
-        labels.append(file.split("-")[0])
+        labels.append(file_name.split("-")[0])
 
     return dfs, labels, data_files
 
@@ -87,7 +90,7 @@ def get_disc_df(date, filepath, offset=60):
     return disc_df
 
 
-def combine_raw_session_dfs(data_folder="../data/sensor_data"):
+def combine_raw_session_dfs(data_folder="../data/sessions/Sensirion", output_name=False):
     """Combines all raw station records into one dataframe and returns it."""
 
     # Store all raw session dataframes in array
@@ -100,7 +103,7 @@ def combine_raw_session_dfs(data_folder="../data/sensor_data"):
     for folder in folders:
 
         # Get session files in folder
-        session_files = [f for f in os.listdir(folder) if f.endswith(".csv")]
+        session_files = [f for f in os.listdir(folder) if f.lower().endswith(".csv")]
 
         # Some session files must be found to proceed
         if len(session_files) <= 0:
@@ -109,7 +112,7 @@ def combine_raw_session_dfs(data_folder="../data/sensor_data"):
         # Go through every session file
         for s_file in session_files:
             # Load raw session dataframe
-            raw_df = pd.read_csv(folder + "/" + s_file, index_col=0)
+            raw_df = pd.read_csv(f"{folder}/{s_file}", index_col=0)
 
             session_dfs.append(raw_df)
 
@@ -123,11 +126,13 @@ def combine_raw_session_dfs(data_folder="../data/sensor_data"):
     # Convert timestamp string column into datetime
     df["Timestamp"] = df["Timestamp"].apply(lambda x: datetime.strptime(x, "%Y-%m-%d %H:%M:%S"))
 
-    # Return dataframe
-    return df
+    if output_name:
+        df.to_csv(output_name, index=False)
+    else:
+        return df
 
 
-def get_computed_sessions(data_folder="../data/sensor_data", disc=False):
+def get_computed_sessions(data_folder="../data/sessions/Sensirion", disc=False, output_name=False):
     """
     Goes through all sessions and takes the median value for every station record.
 
@@ -239,7 +244,10 @@ def get_computed_sessions(data_folder="../data/sensor_data", disc=False):
     sessions_df["Timestamp"] = sessions_df["Timestamp"].apply(lambda x: datetime.strptime(x, "%Y-%m-%d %H:%M:%S"))
 
     # Return sessions df
-    return sessions_df
+    if output_name:
+        sessions_df.to_csv(output_name, index=False)
+    else:
+        return sessions_df
 
 
 def get_calibrate_df(date, folder):
@@ -269,3 +277,83 @@ def get_calibrate_df(date, folder):
     calibrate_df.reset_index(drop=True, inplace=True)
 
     return calibrate_df
+
+
+def get_total_measurement_time(data_folder="../data/sensor_data", output_name=False):
+    """Computes the total measurement time for each sensor.
+
+    Args:
+        input_name (str, optional): [description]. Defaults to '../data/sensor_data'.
+        output_name (bool, optional): [description]. Defaults to False.
+    """
+
+    # Get all measurement times for the different sensors
+    sensor_times = {}
+
+    # Get all date folders
+    folders = get_folder_paths(data_folder)
+
+    # Go through every folder and get sensor dfs
+    for folder in folders:
+        date = folder[-10:]
+        s_dfs, labels, data_files = get_sensor_dfs(date, sensors=[], period="", use_all=True)
+
+        s_df = pd.concat(s_dfs)
+        for sensor, grp in s_df.groupby("Sensor"):
+            if sensor not in sensor_times:
+                # Initialize to zero seconds
+                sensor_times[sensor] = 0
+
+            # Get number of rows and add
+            sensor_times[sensor] += len(grp)
+
+    # Turn into pandas dataframe
+    measurement_df = pd.DataFrame(sensor_times.items(), columns=["Sensor", "Seconds"])
+    measurement_df["Sensor"] = measurement_df["Sensor"].astype(str)
+
+    # Save to
+    if output_name:
+        measurement_df.to_csv(output_name, index=False)
+    else:
+        return measurement_df
+
+
+def get_measuring_time(data_folder="../data/sensor_data", output_name=False):
+    """Computes the measurement time THE RESEARCHERS were on the platform.
+
+    Args:
+        input_name (str, optional): [description]. Defaults to '../data/sensor_data'.
+        output_name (bool, optional): [description]. Defaults to False.
+    """
+
+    # Get all measurement times for the different sensors
+    date_times = {}
+
+    # Get all date folders
+    folders = get_folder_paths(data_folder)
+
+    # Go through every folder and get sensor dfs
+    for folder in folders:
+        date = folder[-10:]
+        s_dfs, labels, data_files = get_sensor_dfs(date, sensors=[], period="", use_all=True)
+
+        s_df = pd.concat(s_dfs)
+        for sensor, grp in s_df.groupby("Sensor"):
+            if date not in date_times:
+                # Initialize to zero seconds
+                date_times[date] = 0
+
+            # Get number of rows and add
+            sensor_records = len(grp)
+
+            if sensor_records > date_times[date]:
+                date_times[date] = sensor_records
+
+    # Turn into pandas dataframe
+    measurement_df = pd.DataFrame(date_times.items(), columns=["Date", "Seconds"])
+
+    # Save to
+    if output_name:
+        measurement_df.to_csv(output_name, index=False)
+    else:
+        return measurement_df

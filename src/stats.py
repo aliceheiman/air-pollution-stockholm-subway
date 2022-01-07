@@ -39,6 +39,11 @@ def CI95(x):
     return confidence_interval
 
 
+def CV(x):
+    """Coefficient of variation."""
+    return sample_std(x) / np.mean(x)
+
+
 ################################
 # QUANTILES
 ################################

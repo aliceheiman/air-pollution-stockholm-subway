@@ -40,6 +40,10 @@ def create_folder(folder_name):
 ################################
 
 
+def get_time(timestr):
+    return datetime.strptime(timestr, "%H:%M:%S").time()
+
+
 def get_timestamp(timestr, date, offset=0):
     """Converts a string into a datetime object, adding
 
