@@ -1,0 +1,10 @@
+,0
+SST,295047.8145738287
+SSW,227733.968811861
+SSB,67313.84576196774
+Alpha,0.1
+F-stat,200.9359982075821
+F-crit,1.5996572463461076
+P-value,1.1102230246251565e-16
+F-stat > F-crit,True (Significant Difference)
+p-value < alpha,True (Significant Difference)

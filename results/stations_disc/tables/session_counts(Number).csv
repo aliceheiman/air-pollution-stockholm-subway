@@ -1,0 +1,22 @@
+Station,total_count,morning_rush_count,evening_rush_count,offtime_count
+Odenplan,19,10,4,5
+St Eriksplan,14,7,6,1
+Fridhemsplan,14,7,6,1
+Kristineberg,14,7,6,1
+Alvik,14,7,6,1
+Thorildsplan,12,6,5,1
+T-Centralen,12,6,2,4
+Hötorget,12,6,2,4
+Rådmansgatan,12,6,2,4
+Slussen,12,6,2,4
+Medborgarplatsen,11,6,2,3
+Gamla Stan,11,6,2,3
+Skanstull,11,6,2,3
+Gullmarsplan,10,5,2,3
+Stora mossen,7,2,5,0
+Abrahamsberg,7,2,5,0
+Brommaplan,7,2,5,0
+Åkeshov,6,2,4,0
+Islandstorget,2,1,1,0
+Angbyplan,1,1,0,0
+Total,208,101,69,38
