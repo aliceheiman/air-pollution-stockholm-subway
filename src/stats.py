@@ -145,7 +145,7 @@ def kurtosis(x):
 ################################
 
 
-def perform_ANOVA(df, param="PM2.5", alpha=0.1):
+def perform_ANOVA(df, param="PM2.5", alpha=0.1, group_name="Sensor"):
     def get_SST(df, param="PM2.5"):
         """Computes sum of squares total for a dataframe.
 
@@ -168,11 +168,11 @@ def perform_ANOVA(df, param="PM2.5", alpha=0.1):
         # distance between data point and their respective mean
         SSW = 0
 
-        for sensor, grp in df.groupby("Sensor"):
+        for sensor, grp in df.groupby(group_name):
             mean = grp[param].mean()
             SSW += np.sum((grp[param] - mean) ** 2)
 
-        SSW_df = np.sum(df.groupby("Sensor")[param].count() - 1)
+        SSW_df = np.sum(df.groupby(group_name)[param].count() - 1)
 
         return SSW, SSW_df
 
@@ -186,13 +186,13 @@ def perform_ANOVA(df, param="PM2.5", alpha=0.1):
         SSB = 0
         grand_mean = df[param].mean()
 
-        for sensor, grp in df.groupby("Sensor"):
+        for sensor, grp in df.groupby(group_name):
             mean = grp[param].mean()
             records = len(grp)
 
             SSB += records * ((mean - grand_mean) ** 2)
 
-        SSB_df = len(df["Sensor"].unique()) - 1
+        SSB_df = len(df[group_name].unique()) - 1
 
         return SSB, SSB_df
 
