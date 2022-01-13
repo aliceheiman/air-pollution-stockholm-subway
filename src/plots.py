@@ -134,7 +134,16 @@ def plot_QQ_plots(s_df, title, param="PM2.5", fig_name=False, col_count=3, row_c
 
 
 def plot_distributions(
-    df, dist_col, title, fig_name=False, bins=False, param="PM2.5", with_textbox=False, column_count=3, share_x=False
+    df,
+    dist_col,
+    title,
+    fig_name=False,
+    bins=False,
+    param="PM2.5",
+    with_textbox=False,
+    column_count=3,
+    share_x=False,
+    share_y=False,
 ):
     def add_textbox(graph_text, ax):
         # Build a rectangle in axes coords
@@ -161,7 +170,7 @@ def plot_distributions(
 
     row_count = ceil(len(df[dist_col].unique()) / column_count)
     fig, axs = plt.subplots(
-        ncols=column_count, nrows=row_count, dpi=250, sharey=False, sharex=share_x, figsize=[20, 22]
+        ncols=column_count, nrows=row_count, dpi=250, sharey=share_y, sharex=share_x, figsize=[20, 22]
     )
 
     i = 0
@@ -222,7 +231,11 @@ def plot_sensors_over_time(df, title, param="PM2.5", size=[12, 5], fig_name=Fals
     fig, ax = plt.subplots(figsize=size, dpi=200)
 
     for label, grp in df.groupby("Sensor"):
-        ax.plot(grp["Timestamp"], grp[param], label=label, linewidth=2)
+
+        if label == "Mean":
+            ax.plot(grp["Timestamp"], grp[param], label=label, linewidth=3, c="k")
+        else:
+            ax.plot(grp["Timestamp"], grp[param], label=label, linewidth=2)
 
     ax.set_title(title)
     ax.set_ylabel(param)
