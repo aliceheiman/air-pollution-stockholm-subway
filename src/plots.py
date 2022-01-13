@@ -112,7 +112,7 @@ def plot_sensor_distributions(s_df, title, fig_name=False, bins=False, param="PM
     fig.suptitle(title, fontsize=30)
 
     if fig_name:
-        plt.savefig(fig_name)
+        plt.savefig(fig_name, dpi=300, bbox_inches="tight")
 
     plt.plot()
 
@@ -128,13 +128,13 @@ def plot_QQ_plots(s_df, title, param="PM2.5", fig_name=False, col_count=3, row_c
     plt.tight_layout()
 
     if fig_name:
-        plt.savefig(fig_name)
+        plt.savefig(fig_name, dpi=300, bbox_inches="tight")
 
     plt.show()
 
 
 def plot_distributions(
-    df, dist_col, title, fig_name=False, bins=False, param="PM2.5", with_textbox=False, column_count=3
+    df, dist_col, title, fig_name=False, bins=False, param="PM2.5", with_textbox=False, column_count=3, share_x=False
 ):
     def add_textbox(graph_text, ax):
         # Build a rectangle in axes coords
@@ -160,7 +160,9 @@ def plot_distributions(
         t.set_bbox(dict(facecolor="white", alpha=0.5, edgecolor="white"))
 
     row_count = ceil(len(df[dist_col].unique()) / column_count)
-    fig, axs = plt.subplots(ncols=column_count, nrows=row_count, dpi=250, sharey=False, figsize=[20, 22])
+    fig, axs = plt.subplots(
+        ncols=column_count, nrows=row_count, dpi=250, sharey=False, sharex=share_x, figsize=[20, 22]
+    )
 
     i = 0
     for dist_item, ax in zip(df[dist_col].unique(), axs.flatten()):
@@ -211,7 +213,7 @@ def plot_distributions(
     fig.suptitle(title, fontsize=30)
 
     if fig_name:
-        plt.savefig(fig_name)
+        plt.savefig(fig_name, dpi=300, bbox_inches="tight")
 
     plt.plot()
 
@@ -230,6 +232,6 @@ def plot_sensors_over_time(df, title, param="PM2.5", size=[12, 5], fig_name=Fals
     plt.tight_layout()
 
     if fig_name:
-        plt.savefig(fig_name)
+        plt.savefig(fig_name, dpi=300, bbox_inches="tight")
 
     plt.show()

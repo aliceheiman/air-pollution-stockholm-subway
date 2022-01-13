@@ -84,19 +84,26 @@ def format_time(date, time_int):
 # OTHER FUNCTIONS
 ################################
 
+# Morning and evening
+def morning(x):
+    return (x >= "06:00:00") & (x <= "09:00:00")
 
-def get_middle_value(df, column):
-    """Sorts a dataframe by column name and returns the middle row."""
 
+def evening(x):
+    return (x >= "15:00:00") & (x <= "18:00:00")
+
+
+def get_middle_value(grp, column):
     # Sort dataframe by column
-    t_df = df.sort_values(by=[column])
+    t_df = grp.sort_values(by=[column])
 
     # Pick out column value in middle
     n = int(len(t_df) / 2)
 
     # Get the middle record
-    row = df.iloc[n]
+    row = t_df.iloc[n]
 
+    # Return
     return row[column]
 
 
