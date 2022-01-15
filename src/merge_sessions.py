@@ -13,6 +13,7 @@ import re
 import sys
 
 from src.util import *
+from src.frames import *
 
 ################################
 # MAIN
@@ -106,7 +107,8 @@ def merge_sensirion_sensors(
 def merge_disc_sensor(input_file="../results/sessions/disc_raw.csv", output_file="../results/sessions/disc.csv"):
     """Merges raw sensor values for each sensor."""
 
-    r_df = pd.read_csv("../results/sessions/disc_raw.csv")
+    # r_df = pd.read_csv("../results/sessions/disc_raw.csv")
+    r_df = combine_raw_session_dfs("../data/sessions/DiSC", "../results/sessions/disc_raw.csv")
 
     column_order = [
         "Session Id",
@@ -152,6 +154,10 @@ def merge_disc_sensor(input_file="../results/sessions/disc_raw.csv", output_file
 
             # Get time data
             timestamp = get_middle_value(grp, "Timestamp")
+
+            if type(timestamp) != str:
+                timestamp = str(timestamp)
+
             date = datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S").strftime("%Y-%m-%d")
             time = timestamp[-8:]
 

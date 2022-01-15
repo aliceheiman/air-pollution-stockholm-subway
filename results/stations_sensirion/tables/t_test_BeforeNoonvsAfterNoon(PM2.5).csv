@@ -1,0 +1,21 @@
+,Station,Category,param,n1,n2,p-value,a,significant difference
+0,Islandstorget,BeforeNoonvsAfterNoon,PM2.5,2,2,0.19317888404052352,0.05,False
+1,Angbyplan,BeforeNoonvsAfterNoon,PM2.5,1,1,,0.05,False
+2,Åkeshov,BeforeNoonvsAfterNoon,PM2.5,2,7,0.5558051902966277,0.05,False
+3,Brommaplan,BeforeNoonvsAfterNoon,PM2.5,3,8,0.21058658437794006,0.05,False
+4,Abrahamsberg,BeforeNoonvsAfterNoon,PM2.5,3,8,0.26012266050142435,0.05,False
+5,Stora mossen,BeforeNoonvsAfterNoon,PM2.5,3,8,0.2759364096184111,0.05,False
+6,Alvik,BeforeNoonvsAfterNoon,PM2.5,10,10,0.551313460603811,0.05,False
+7,Kristineberg,BeforeNoonvsAfterNoon,PM2.5,10,10,0.3912220285968885,0.05,False
+8,Thorildsplan,BeforeNoonvsAfterNoon,PM2.5,8,9,0.6238796905556176,0.05,False
+9,Fridhemsplan,BeforeNoonvsAfterNoon,PM2.5,10,10,0.41623566055545647,0.05,False
+10,St Eriksplan,BeforeNoonvsAfterNoon,PM2.5,10,10,0.32329996349800316,0.05,False
+11,Odenplan,BeforeNoonvsAfterNoon,PM2.5,16,11,0.9031802491945696,0.05,False
+12,Rådmansgatan,BeforeNoonvsAfterNoon,PM2.5,10,7,0.9769132943252478,0.05,False
+13,Hötorget,BeforeNoonvsAfterNoon,PM2.5,10,6,0.812551052858622,0.05,False
+14,T-Centralen,BeforeNoonvsAfterNoon,PM2.5,11,6,0.8927077375428414,0.05,False
+15,Gamla Stan,BeforeNoonvsAfterNoon,PM2.5,11,6,0.507870864073207,0.05,False
+16,Slussen,BeforeNoonvsAfterNoon,PM2.5,12,6,5.841847192547783e-05,0.05,True
+17,Medborgarplatsen,BeforeNoonvsAfterNoon,PM2.5,11,6,0.3993239149730784,0.05,False
+18,Skanstull,BeforeNoonvsAfterNoon,PM2.5,11,6,0.21556413788946513,0.05,False
+19,Gullmarsplan,BeforeNoonvsAfterNoon,PM2.5,10,6,0.7121877019584864,0.05,False

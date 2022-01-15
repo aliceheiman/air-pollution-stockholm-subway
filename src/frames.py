@@ -128,8 +128,8 @@ def combine_raw_session_dfs(data_folder="../data/sessions/Sensirion", output_nam
 
     if output_name:
         df.to_csv(output_name, index=False)
-    else:
-        return df
+
+    return df
 
 
 def get_computed_sessions(data_folder="../data/sessions/Sensirion", disc=False, output_name=False):

@@ -1,0 +1,195 @@
+           Multiple Comparison of Means - Tukey HSD, FWER=0.05            
+==========================================================================
+     group1           group2      meandiff p-adj   lower    upper   reject
+--------------------------------------------------------------------------
+    Abrahamsberg            Alvik   0.1798    0.9  -6.2942   6.6539  False
+    Abrahamsberg        Angbyplan   0.9757    0.9  -12.282  14.2334  False
+    Abrahamsberg       Brommaplan  -0.0294    0.9  -7.3834   7.3246  False
+    Abrahamsberg     Fridhemsplan   14.211  0.001    7.737  20.6851   True
+    Abrahamsberg       Gamla Stan   3.9306 0.8268  -2.7431  10.6042  False
+    Abrahamsberg     Gullmarsplan   0.1715    0.9  -6.5836   6.9266  False
+    Abrahamsberg         Hötorget  31.2639  0.001  24.5088   38.019   True
+    Abrahamsberg    Islandstorget   0.6886    0.9  -9.3813  10.7586  False
+    Abrahamsberg     Kristineberg   0.5894    0.9  -5.8847   7.0634  False
+    Abrahamsberg Medborgarplatsen  13.5711  0.001   6.8974  20.2447   True
+    Abrahamsberg         Odenplan  23.1851  0.001   17.016  29.3541   True
+    Abrahamsberg     Rådmansgatan  25.3027  0.001   18.629  31.9764   True
+    Abrahamsberg        Skanstull  10.5923  0.001   3.9187   17.266   True
+    Abrahamsberg          Slussen  17.7139  0.001  11.1134  24.3143   True
+    Abrahamsberg     St Eriksplan  20.4644  0.001  13.9903  26.9384   True
+    Abrahamsberg     Stora mossen    0.236    0.9   -7.118   7.5901  False
+    Abrahamsberg      T-Centralen    26.98  0.001  20.3064  33.6537   True
+    Abrahamsberg     Thorildsplan   0.3024    0.9  -6.3712   6.9761  False
+    Abrahamsberg          Åkeshov  -0.4104    0.9  -8.1623   7.3414  False
+           Alvik        Angbyplan   0.7959    0.9 -11.9947  13.5864  False
+           Alvik       Brommaplan  -0.2092    0.9  -6.6833   6.2649  False
+           Alvik     Fridhemsplan  14.0312  0.001   8.5773  19.4851   True
+           Alvik       Gamla Stan   3.7507 0.6636  -1.9387   9.4402  False
+           Alvik     Gullmarsplan  -0.0083    0.9  -5.7931   5.7764  False
+           Alvik         Hötorget  31.0841  0.001  25.2994  36.8688   True
+           Alvik    Islandstorget   0.5088    0.9  -8.9376   9.9553  False
+           Alvik     Kristineberg   0.4096    0.9  -5.0443   5.8635  False
+           Alvik Medborgarplatsen  13.3913  0.001   7.7018  19.0807   True
+           Alvik         Odenplan  23.0052  0.001  17.9171  28.0934   True
+           Alvik     Rådmansgatan  25.1229  0.001  19.4334  30.8123   True
+           Alvik        Skanstull  10.4125  0.001   4.7231  16.1019   True
+           Alvik          Slussen   17.534  0.001  11.9307  23.1374   True
+           Alvik     St Eriksplan  20.2846  0.001  14.8307  25.7385   True
+           Alvik     Stora mossen   0.0562    0.9  -6.4179   6.5303  False
+           Alvik      T-Centralen  26.8002  0.001  21.1108  32.4897   True
+           Alvik     Thorildsplan   0.1226    0.9  -5.5668    5.812  False
+           Alvik          Åkeshov  -0.5903    0.9  -7.5129   6.3323  False
+       Angbyplan       Brommaplan  -1.0051    0.9 -14.2627  12.2526  False
+       Angbyplan     Fridhemsplan  13.2353 0.0336   0.4448  26.0259   True
+       Angbyplan       Gamla Stan   2.9549    0.9  -9.9378  15.8476  False
+       Angbyplan     Gullmarsplan  -0.8042    0.9 -13.7392  12.1309  False
+       Angbyplan         Hötorget  30.2882  0.001  17.3532  43.2233   True
+       Angbyplan    Islandstorget   -0.287    0.9 -15.2231  14.6491  False
+       Angbyplan     Kristineberg  -0.3863    0.9 -13.1768  12.4042  False
+       Angbyplan Medborgarplatsen  12.5954 0.0648  -0.2973  25.4881  False
+       Angbyplan         Odenplan  22.2094  0.001   9.5705  34.8483   True
+       Angbyplan     Rådmansgatan   24.327  0.001  11.4343  37.2197   True
+       Angbyplan        Skanstull   9.6167 0.4606  -3.2761  22.5094  False
+       Angbyplan          Slussen  16.7382  0.001   3.8832  29.5931   True
+       Angbyplan     St Eriksplan  19.4887  0.001   6.6982  32.2792   True
+       Angbyplan     Stora mossen  -0.7397    0.9 -13.9973   12.518  False
+       Angbyplan      T-Centralen  26.0044  0.001  13.1116  38.8971   True
+       Angbyplan     Thorildsplan  -0.6732    0.9  -13.566  12.2195  False
+       Angbyplan          Åkeshov  -1.3861    0.9 -14.8685  12.0963  False
+      Brommaplan     Fridhemsplan  14.2404  0.001   7.7663  20.7145   True
+      Brommaplan       Gamla Stan   3.9599 0.8166  -2.7137  10.6336  False
+      Brommaplan     Gullmarsplan   0.2009    0.9  -6.5542    6.956  False
+      Brommaplan         Hötorget  31.2933  0.001  24.5382  38.0484   True
+      Brommaplan    Islandstorget    0.718    0.9  -9.3519   10.788  False
+      Brommaplan     Kristineberg   0.6188    0.9  -5.8553   7.0928  False
+      Brommaplan Medborgarplatsen  13.6005  0.001   6.9268  20.2741   True
+      Brommaplan         Odenplan  23.2144  0.001  17.0454  29.3835   True
+      Brommaplan     Rådmansgatan  25.3321  0.001  18.6584  32.0058   True
+      Brommaplan        Skanstull  10.6217  0.001    3.948  17.2954   True
+      Brommaplan          Slussen  17.7432  0.001  11.1428  24.3437   True
+      Brommaplan     St Eriksplan  20.4938  0.001  14.0197  26.9678   True
+      Brommaplan     Stora mossen   0.2654    0.9  -7.0886   7.6194  False
+      Brommaplan      T-Centralen  27.0094  0.001  20.3357  33.6831   True
+      Brommaplan     Thorildsplan   0.3318    0.9  -6.3419   7.0055  False
+      Brommaplan          Åkeshov  -0.3811    0.9  -8.1329   7.3708  False
+    Fridhemsplan       Gamla Stan -10.2805  0.001 -15.9699   -4.591   True
+    Fridhemsplan     Gullmarsplan -14.0395  0.001 -19.8243  -8.2548   True
+    Fridhemsplan         Hötorget  17.0529  0.001  11.2682  22.8376   True
+    Fridhemsplan    Islandstorget -13.5224  0.001 -22.9688  -4.0759   True
+    Fridhemsplan     Kristineberg -13.6216  0.001 -19.0755  -8.1677   True
+    Fridhemsplan Medborgarplatsen  -0.6399    0.9  -6.3294   5.0495  False
+    Fridhemsplan         Odenplan    8.974  0.001   3.8859  14.0622   True
+    Fridhemsplan     Rådmansgatan  11.0917  0.001   5.4022  16.7811   True
+    Fridhemsplan        Skanstull  -3.6187 0.7175  -9.3081   2.0708  False
+    Fridhemsplan          Slussen   3.5028 0.7428  -2.1005   9.1062  False
+    Fridhemsplan     St Eriksplan   6.2534 0.0081   0.7995  11.7073   True
+    Fridhemsplan     Stora mossen  -13.975  0.001 -20.4491  -7.5009   True
+    Fridhemsplan      T-Centralen   12.769  0.001   7.0796  18.4585   True
+    Fridhemsplan     Thorildsplan -13.9086  0.001  -19.598  -8.2192   True
+    Fridhemsplan          Åkeshov -14.6215  0.001 -21.5441  -7.6989   True
+      Gamla Stan     Gullmarsplan  -3.7591 0.7414  -9.7664   2.2482  False
+      Gamla Stan         Hötorget  27.3333  0.001   21.326  33.3406   True
+      Gamla Stan    Islandstorget  -3.2419    0.9 -12.8263   6.3424  False
+      Gamla Stan     Kristineberg  -3.3412 0.8307  -9.0306   2.3483  False
+      Gamla Stan Medborgarplatsen   9.6405  0.001   3.7249  15.5561   True
+      Gamla Stan         Odenplan  19.2545  0.001  13.9147  24.5943   True
+      Gamla Stan     Rådmansgatan  21.3721  0.001  15.4565  27.2877   True
+      Gamla Stan        Skanstull   6.6618 0.0106   0.7462  12.5774   True
+      Gamla Stan          Slussen  13.7833  0.001   7.9505  19.6161   True
+      Gamla Stan     St Eriksplan  16.5338  0.001  10.8444  22.2233   True
+      Gamla Stan     Stora mossen  -3.6945    0.9 -10.3682   2.9791  False
+      Gamla Stan      T-Centralen  23.0495  0.001  17.1339  28.9651   True
+      Gamla Stan     Thorildsplan  -3.6281 0.7702  -9.5437   2.2875  False
+      Gamla Stan          Åkeshov   -4.341 0.7766 -11.4507   2.7686  False
+    Gullmarsplan         Hötorget  31.0924  0.001  24.9948  37.1901   True
+    Gullmarsplan    Islandstorget   0.5172    0.9  -9.1241  10.1584  False
+    Gullmarsplan     Kristineberg   0.4179    0.9  -5.3668   6.2026  False
+    Gullmarsplan Medborgarplatsen  13.3996  0.001   7.3923  19.4069   True
+    Gullmarsplan         Odenplan  23.0136  0.001  17.5723  28.4548   True
+    Gullmarsplan     Rådmansgatan  25.1312  0.001  19.1239  31.1385   True
+    Gullmarsplan        Skanstull  10.4209  0.001   4.4135  16.4282   True
+    Gullmarsplan          Slussen  17.5424  0.001  11.6165  23.4682   True
+    Gullmarsplan     St Eriksplan  20.2929  0.001  14.5082  26.0776   True
+    Gullmarsplan     Stora mossen   0.0645    0.9  -6.6906   6.8196  False
+    Gullmarsplan      T-Centralen  26.8086  0.001  20.8012  32.8159   True
+    Gullmarsplan     Thorildsplan   0.1309    0.9  -5.8764   6.1382  False
+    Gullmarsplan          Åkeshov  -0.5819    0.9  -7.7681   6.6042  False
+        Hötorget    Islandstorget -30.5753  0.001 -40.2165  -20.934   True
+        Hötorget     Kristineberg -30.6745  0.001 -36.4592 -24.8898   True
+        Hötorget Medborgarplatsen -17.6928  0.001 -23.7001 -11.6855   True
+        Hötorget         Odenplan  -8.0788  0.001 -13.5201  -2.6376   True
+        Hötorget     Rådmansgatan  -5.9612 0.0546 -11.9685   0.0461  False
+        Hötorget        Skanstull -20.6716  0.001 -26.6789 -14.6643   True
+        Hötorget          Slussen   -13.55  0.001 -19.4759  -7.6242   True
+        Hötorget     St Eriksplan -10.7995  0.001 -16.5843  -5.0148   True
+        Hötorget     Stora mossen -31.0279  0.001  -37.783 -24.2728   True
+        Hötorget      T-Centralen  -4.2839 0.5386 -10.2912   1.7234  False
+        Hötorget     Thorildsplan -30.9615  0.001 -36.9688 -24.9542   True
+        Hötorget          Åkeshov -31.6743  0.001 -38.8605 -24.4882   True
+   Islandstorget     Kristineberg  -0.0993    0.9  -9.5457   9.3472  False
+   Islandstorget Medborgarplatsen  12.8824  0.001   3.2981  22.4668   True
+   Islandstorget         Odenplan  22.4964  0.001  13.2563  31.7365   True
+   Islandstorget     Rådmansgatan   24.614  0.001  15.0297  34.1984   True
+   Islandstorget        Skanstull   9.9037 0.0341   0.3194   19.488   True
+   Islandstorget          Slussen  17.0252  0.001   7.4917  26.5587   True
+   Islandstorget     St Eriksplan  19.7757  0.001  10.3293  29.2222   True
+   Islandstorget     Stora mossen  -0.4526    0.9 -10.5226   9.6173  False
+   Islandstorget      T-Centralen  26.2914  0.001  16.7071  35.8757   True
+   Islandstorget     Thorildsplan  -0.3862    0.9  -9.9706   9.1981  False
+   Islandstorget          Åkeshov  -1.0991    0.9 -11.4631   9.2649  False
+    Kristineberg Medborgarplatsen  12.9817  0.001   7.2922  18.6711   True
+    Kristineberg         Odenplan  22.5957  0.001  17.5075  27.6838   True
+    Kristineberg     Rådmansgatan  24.7133  0.001  19.0239  30.4027   True
+    Kristineberg        Skanstull  10.0029  0.001   4.3135  15.6924   True
+    Kristineberg          Slussen  17.1245  0.001  11.5211  22.7278   True
+    Kristineberg     St Eriksplan   19.875  0.001  14.4211  25.3289   True
+    Kristineberg     Stora mossen  -0.3534    0.9  -6.8274   6.1207  False
+    Kristineberg      T-Centralen  26.3906  0.001  20.7012  32.0801   True
+    Kristineberg     Thorildsplan   -0.287    0.9  -5.9764   5.4025  False
+    Kristineberg          Åkeshov  -0.9998    0.9  -7.9224   5.9228  False
+Medborgarplatsen         Odenplan    9.614  0.001   4.2742  14.9538   True
+Medborgarplatsen     Rådmansgatan  11.7316  0.001    5.816  17.6472   True
+Medborgarplatsen        Skanstull  -2.9787    0.9  -8.8943   2.9369  False
+Medborgarplatsen          Slussen   4.1428 0.5452  -1.6901   9.9756  False
+Medborgarplatsen     St Eriksplan   6.8933 0.0032   1.2039  12.5827   True
+Medborgarplatsen     Stora mossen  -13.335  0.001 -20.0087  -6.6614   True
+Medborgarplatsen      T-Centralen   13.409  0.001   7.4934  19.3246   True
+Medborgarplatsen     Thorildsplan -13.2686  0.001 -19.1842  -7.3531   True
+Medborgarplatsen          Åkeshov -13.9815  0.001 -21.0912  -6.8719   True
+        Odenplan     Rådmansgatan   2.1176    0.9  -3.2222   7.4575  False
+        Odenplan        Skanstull -12.5927  0.001 -17.9325  -7.2529   True
+        Odenplan          Slussen  -5.4712 0.0306 -10.7192  -0.2232   True
+        Odenplan     St Eriksplan  -2.7207    0.9  -7.8088   2.3675  False
+        Odenplan     Stora mossen  -22.949  0.001 -29.1181 -16.7799   True
+        Odenplan      T-Centralen    3.795 0.5442  -1.5448   9.1348  False
+        Odenplan     Thorildsplan -22.8826  0.001 -28.2224 -17.5428   True
+        Odenplan          Åkeshov -23.5955  0.001 -30.2338 -16.9572   True
+    Rådmansgatan        Skanstull -14.7103  0.001 -20.6259  -8.7948   True
+    Rådmansgatan          Slussen  -7.5888  0.001 -13.4217   -1.756   True
+    Rådmansgatan     St Eriksplan  -4.8383 0.2174 -10.5277   0.8511  False
+    Rådmansgatan     Stora mossen -25.0667  0.001 -31.7403  -18.393   True
+    Rådmansgatan      T-Centralen   1.6774    0.9  -4.2382   7.5929  False
+    Rådmansgatan     Thorildsplan -25.0003  0.001 -30.9158 -19.0847   True
+    Rådmansgatan          Åkeshov -25.7131  0.001 -32.8228 -18.6035   True
+       Skanstull          Slussen   7.1215 0.0028   1.2887  12.9544   True
+       Skanstull     St Eriksplan    9.872  0.001   4.1826  15.5615   True
+       Skanstull     Stora mossen -10.3563  0.001   -17.03  -3.6826   True
+       Skanstull      T-Centralen  16.3877  0.001  10.4721  22.3033   True
+       Skanstull     Thorildsplan -10.2899  0.001 -16.2055  -4.3743   True
+       Skanstull          Åkeshov -11.0028  0.001 -18.1124  -3.8931   True
+         Slussen     St Eriksplan   2.7505    0.9  -2.8528   8.3539  False
+         Slussen     Stora mossen -17.4778  0.001 -24.0783 -10.8774   True
+         Slussen      T-Centralen   9.2662  0.001   3.4333   15.099   True
+         Slussen     Thorildsplan -17.4114  0.001 -23.2443 -11.5786   True
+         Slussen          Åkeshov -18.1243  0.001 -25.1653 -11.0833   True
+    St Eriksplan     Stora mossen -20.2284  0.001 -26.7024 -13.7543   True
+    St Eriksplan      T-Centralen   6.5157 0.0082   0.8262  12.2051   True
+    St Eriksplan     Thorildsplan  -20.162  0.001 -25.8514 -14.4725   True
+    St Eriksplan          Åkeshov -20.8748  0.001 -27.7974 -13.9522   True
+    Stora mossen      T-Centralen   26.744  0.001  20.0703  33.4177   True
+    Stora mossen     Thorildsplan   0.0664    0.9  -6.6073   6.7401  False
+    Stora mossen          Åkeshov  -0.6465    0.9  -8.3983   7.1054  False
+     T-Centralen     Thorildsplan -26.6776  0.001 -32.5932  -20.762   True
+     T-Centralen          Åkeshov -27.3905  0.001 -34.5001 -20.2808   True
+    Thorildsplan          Åkeshov  -0.7129    0.9  -7.8225   6.3968  False
+--------------------------------------------------------------------------
