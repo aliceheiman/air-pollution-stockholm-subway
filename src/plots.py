@@ -227,7 +227,7 @@ def plot_distributions(
     plt.plot()
 
 
-def plot_sensors_over_time(df, title, param="PM2.5", size=[12, 5], fig_name=False):
+def plot_sensors_over_time(df, title, param="PM2.5", size=[12, 5], fig_name=False, unit=""):
     fig, ax = plt.subplots(figsize=size, dpi=200)
 
     for label, grp in df.groupby("Sensor"):
@@ -237,10 +237,12 @@ def plot_sensors_over_time(df, title, param="PM2.5", size=[12, 5], fig_name=Fals
         else:
             ax.plot(grp["Timestamp"], grp[param], label=label, linewidth=2)
 
-    ax.set_title(title)
-    ax.set_ylabel(param)
-    ax.legend(fontsize=12, loc=4, frameon=True, facecolor="#fff")
+    # ax.set_title(title)
+    ax.set_ylabel(f"{param} ({unit})", fontsize=18)
+    ax.legend(fontsize=17, loc=4, frameon=True, facecolor="#fff", title="Sensor")
     format_time_axis()
+
+    plt.xticks(fontsize=18, rotation=0)
 
     plt.tight_layout()
 
