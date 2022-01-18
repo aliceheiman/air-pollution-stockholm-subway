@@ -1,21 +1,21 @@
-,Station,Category,param,n1,n2,p-value,a,significant difference
-0,Islandstorget,DateSplit,PM2.5,2,2,0.46638803875950463,0.05,False
-1,Angbyplan,DateSplit,PM2.5,1,1,,0.05,False
-2,Åkeshov,DateSplit,PM2.5,6,3,0.1966981772281209,0.05,False
-3,Brommaplan,DateSplit,PM2.5,6,5,0.5590241133931807,0.05,False
-4,Abrahamsberg,DateSplit,PM2.5,6,5,0.4787255469958902,0.05,False
-5,Stora mossen,DateSplit,PM2.5,6,5,0.45012235375135234,0.05,False
-6,Alvik,DateSplit,PM2.5,9,11,0.7705923501318559,0.05,False
-7,Kristineberg,DateSplit,PM2.5,9,11,0.6737350918708903,0.05,False
-8,Thorildsplan,DateSplit,PM2.5,7,10,0.28488673552718663,0.05,False
-9,Fridhemsplan,DateSplit,PM2.5,9,11,0.11654027039383755,0.05,False
-10,St Eriksplan,DateSplit,PM2.5,9,11,0.8048280905222389,0.05,False
-11,Odenplan,DateSplit,PM2.5,14,13,0.07944028684105253,0.05,False
-12,Rådmansgatan,DateSplit,PM2.5,10,7,0.09202525067086578,0.05,False
-13,Hötorget,DateSplit,PM2.5,9,7,0.48487146216172516,0.05,False
-14,T-Centralen,DateSplit,PM2.5,9,8,0.044062178335278916,0.05,True
-15,Gamla Stan,DateSplit,PM2.5,8,9,0.5641176739073576,0.05,False
-16,Slussen,DateSplit,PM2.5,9,9,0.31088033963759487,0.05,False
-17,Medborgarplatsen,DateSplit,PM2.5,8,9,0.7464096481167696,0.05,False
-18,Skanstull,DateSplit,PM2.5,8,9,0.47147563538040815,0.05,False
-19,Gullmarsplan,DateSplit,PM2.5,7,9,0.19146773694365735,0.05,False
+,Session Id,Category,param,n1,n2,p-value,a,significant difference
+0,Islandstorget,DateSplit,PM2.5,2,2,0.46638803875950463,0.01,False
+1,Angbyplan,DateSplit,PM2.5,1,1,,0.01,False
+2,Åkeshov,DateSplit,PM2.5,6,3,0.1966981772281209,0.01,False
+3,Brommaplan,DateSplit,PM2.5,6,5,0.5590241133931807,0.01,False
+4,Abrahamsberg,DateSplit,PM2.5,6,5,0.4787255469958902,0.01,False
+5,Stora mossen,DateSplit,PM2.5,6,5,0.45012235375135234,0.01,False
+6,Alvik,DateSplit,PM2.5,9,11,0.7705923501318559,0.01,False
+7,Kristineberg,DateSplit,PM2.5,9,11,0.6737350918708903,0.01,False
+8,Thorildsplan,DateSplit,PM2.5,7,10,0.28488673552718663,0.01,False
+9,Fridhemsplan,DateSplit,PM2.5,9,11,0.11654027039383755,0.01,False
+10,St Eriksplan,DateSplit,PM2.5,9,11,0.8048280905222389,0.01,False
+11,Odenplan,DateSplit,PM2.5,14,13,0.07944028684105253,0.01,False
+12,Rådmansgatan,DateSplit,PM2.5,10,7,0.09202525067086578,0.01,False
+13,Hötorget,DateSplit,PM2.5,9,7,0.48487146216172516,0.01,False
+14,T-Centralen,DateSplit,PM2.5,9,8,0.044062178335278916,0.01,False
+15,Gamla Stan,DateSplit,PM2.5,8,9,0.5641176739073576,0.01,False
+16,Slussen,DateSplit,PM2.5,9,9,0.31088033963759487,0.01,False
+17,Medborgarplatsen,DateSplit,PM2.5,8,9,0.7464096481167696,0.01,False
+18,Skanstull,DateSplit,PM2.5,8,9,0.47147563538040815,0.01,False
+19,Gullmarsplan,DateSplit,PM2.5,7,9,0.19146773694365735,0.01,False

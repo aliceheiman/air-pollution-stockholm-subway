@@ -1,21 +1,21 @@
 ,Station,Category,param,n1,n2,p-value,a,significant difference
-0,Islandstorget,Morning vs. Evening,PM2.5,2,1,,0.05,False
-1,Angbyplan,Morning vs. Evening,PM2.5,1,1,,0.05,False
-2,Åkeshov,Morning vs. Evening,PM2.5,2,3,0.9884248589023732,0.05,False
-3,Brommaplan,Morning vs. Evening,PM2.5,3,5,0.40707768656910703,0.05,False
-4,Abrahamsberg,Morning vs. Evening,PM2.5,3,5,0.46945435380578737,0.05,False
-5,Stora mossen,Morning vs. Evening,PM2.5,3,6,0.4589874478164898,0.05,False
-6,Alvik,Morning vs. Evening,PM2.5,8,7,0.6192405543801387,0.05,False
-7,Kristineberg,Morning vs. Evening,PM2.5,8,7,0.4464853544772447,0.05,False
-8,Thorildsplan,Morning vs. Evening,PM2.5,6,6,0.6691889381247538,0.05,False
-9,Fridhemsplan,Morning vs. Evening,PM2.5,8,8,0.08406352241189179,0.05,False
-10,St Eriksplan,Morning vs. Evening,PM2.5,8,8,0.21581801242939264,0.05,False
-11,Odenplan,Morning vs. Evening,PM2.5,12,9,0.28583407233279956,0.05,False
-12,Rådmansgatan,Morning vs. Evening,PM2.5,8,5,0.9181557365483327,0.05,False
-13,Hötorget,Morning vs. Evening,PM2.5,7,5,0.6791803648234471,0.05,False
-14,T-Centralen,Morning vs. Evening,PM2.5,8,5,0.4067235790647289,0.05,False
-15,Gamla Stan,Morning vs. Evening,PM2.5,9,5,0.4291020887861078,0.05,False
-16,Slussen,Morning vs. Evening,PM2.5,9,5,8.080497173310856e-05,0.05,True
-17,Medborgarplatsen,Morning vs. Evening,PM2.5,9,5,0.6768960922469968,0.05,False
-18,Skanstull,Morning vs. Evening,PM2.5,9,5,0.16145897586754293,0.05,False
-19,Gullmarsplan,Morning vs. Evening,PM2.5,8,5,0.49823709435137575,0.05,False
+0,Islandstorget,Morning vs. Evening,PM2.5,2,1,,0.01,False
+1,Angbyplan,Morning vs. Evening,PM2.5,1,1,,0.01,False
+2,Åkeshov,Morning vs. Evening,PM2.5,2,3,0.9884248589023732,0.01,False
+3,Brommaplan,Morning vs. Evening,PM2.5,3,5,0.40707768656910703,0.01,False
+4,Abrahamsberg,Morning vs. Evening,PM2.5,3,5,0.46945435380578737,0.01,False
+5,Stora mossen,Morning vs. Evening,PM2.5,3,6,0.4589874478164898,0.01,False
+6,Alvik,Morning vs. Evening,PM2.5,8,7,0.6192405543801387,0.01,False
+7,Kristineberg,Morning vs. Evening,PM2.5,8,7,0.4464853544772447,0.01,False
+8,Thorildsplan,Morning vs. Evening,PM2.5,6,6,0.6691889381247538,0.01,False
+9,Fridhemsplan,Morning vs. Evening,PM2.5,8,8,0.08406352241189179,0.01,False
+10,St Eriksplan,Morning vs. Evening,PM2.5,8,8,0.21581801242939264,0.01,False
+11,Odenplan,Morning vs. Evening,PM2.5,12,9,0.28583407233279956,0.01,False
+12,Rådmansgatan,Morning vs. Evening,PM2.5,8,5,0.9181557365483327,0.01,False
+13,Hötorget,Morning vs. Evening,PM2.5,7,5,0.6791803648234471,0.01,False
+14,T-Centralen,Morning vs. Evening,PM2.5,8,5,0.4067235790647289,0.01,False
+15,Gamla Stan,Morning vs. Evening,PM2.5,9,5,0.4291020887861078,0.01,False
+16,Slussen,Morning vs. Evening,PM2.5,9,5,8.080497173310856e-05,0.01,True
+17,Medborgarplatsen,Morning vs. Evening,PM2.5,9,5,0.6768960922469968,0.01,False
+18,Skanstull,Morning vs. Evening,PM2.5,9,5,0.16145897586754293,0.01,False
+19,Gullmarsplan,Morning vs. Evening,PM2.5,8,5,0.49823709435137575,0.01,False

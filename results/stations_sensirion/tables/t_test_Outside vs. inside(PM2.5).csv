@@ -1,2 +1,2 @@
 ,Station,Category,param,n1,n2,p-value,a,significant difference
-0,Gullmarsplan,Outside vs. inside,PM2.5,169,138,1.0549371775244087e-78,0.05,True
+0,Gullmarsplan,Outside vs. inside,PM2.5,169,138,1.0549371775244087e-78,0.01,True

@@ -1,21 +1,21 @@
 ,Station,Category,param,n1,n2,p-value,a,significant difference
-0,Islandstorget,Peak vs. offpeak,PM2.5,3,1,,0.05,False
-1,Angbyplan,Peak vs. offpeak,PM2.5,2,0,,0.05,False
-2,Åkeshov,Peak vs. offpeak,PM2.5,5,4,0.21009025479041496,0.05,False
-3,Brommaplan,Peak vs. offpeak,PM2.5,8,3,0.3529471733009918,0.05,False
-4,Abrahamsberg,Peak vs. offpeak,PM2.5,8,3,0.34615864321808454,0.05,False
-5,Stora mossen,Peak vs. offpeak,PM2.5,9,2,0.2529839410268716,0.05,False
-6,Alvik,Peak vs. offpeak,PM2.5,15,5,0.0771634984938519,0.05,False
-7,Kristineberg,Peak vs. offpeak,PM2.5,15,5,0.08027846516844311,0.05,False
-8,Thorildsplan,Peak vs. offpeak,PM2.5,12,5,0.04685246573389422,0.05,True
-9,Fridhemsplan,Peak vs. offpeak,PM2.5,16,4,0.1042779536070719,0.05,False
-10,St Eriksplan,Peak vs. offpeak,PM2.5,16,4,0.07412966674867456,0.05,False
-11,Odenplan,Peak vs. offpeak,PM2.5,21,6,0.7297579529225864,0.05,False
-12,Rådmansgatan,Peak vs. offpeak,PM2.5,13,4,0.7186402535181347,0.05,False
-13,Hötorget,Peak vs. offpeak,PM2.5,12,4,0.6215878032873561,0.05,False
-14,T-Centralen,Peak vs. offpeak,PM2.5,13,4,0.47374917394021543,0.05,False
-15,Gamla Stan,Peak vs. offpeak,PM2.5,14,3,0.05814457378831098,0.05,False
-16,Slussen,Peak vs. offpeak,PM2.5,14,4,0.5584149596978494,0.05,False
-17,Medborgarplatsen,Peak vs. offpeak,PM2.5,14,3,0.22202703278873986,0.05,False
-18,Skanstull,Peak vs. offpeak,PM2.5,14,3,0.5551995244182504,0.05,False
-19,Gullmarsplan,Peak vs. offpeak,PM2.5,13,3,0.12275666538907305,0.05,False
+0,Islandstorget,Peak vs. offpeak,PM2.5,3,1,,0.01,False
+1,Angbyplan,Peak vs. offpeak,PM2.5,2,0,,0.01,False
+2,Åkeshov,Peak vs. offpeak,PM2.5,5,4,0.21009025479041496,0.01,False
+3,Brommaplan,Peak vs. offpeak,PM2.5,8,3,0.3529471733009918,0.01,False
+4,Abrahamsberg,Peak vs. offpeak,PM2.5,8,3,0.34615864321808454,0.01,False
+5,Stora mossen,Peak vs. offpeak,PM2.5,9,2,0.2529839410268716,0.01,False
+6,Alvik,Peak vs. offpeak,PM2.5,15,5,0.0771634984938519,0.01,False
+7,Kristineberg,Peak vs. offpeak,PM2.5,15,5,0.08027846516844311,0.01,False
+8,Thorildsplan,Peak vs. offpeak,PM2.5,12,5,0.04685246573389422,0.01,False
+9,Fridhemsplan,Peak vs. offpeak,PM2.5,16,4,0.1042779536070719,0.01,False
+10,St Eriksplan,Peak vs. offpeak,PM2.5,16,4,0.07412966674867456,0.01,False
+11,Odenplan,Peak vs. offpeak,PM2.5,21,6,0.7297579529225864,0.01,False
+12,Rådmansgatan,Peak vs. offpeak,PM2.5,13,4,0.7186402535181347,0.01,False
+13,Hötorget,Peak vs. offpeak,PM2.5,12,4,0.6215878032873561,0.01,False
+14,T-Centralen,Peak vs. offpeak,PM2.5,13,4,0.47374917394021543,0.01,False
+15,Gamla Stan,Peak vs. offpeak,PM2.5,14,3,0.05814457378831098,0.01,False
+16,Slussen,Peak vs. offpeak,PM2.5,14,4,0.5584149596978494,0.01,False
+17,Medborgarplatsen,Peak vs. offpeak,PM2.5,14,3,0.22202703278873986,0.01,False
+18,Skanstull,Peak vs. offpeak,PM2.5,14,3,0.5551995244182504,0.01,False
+19,Gullmarsplan,Peak vs. offpeak,PM2.5,13,3,0.12275666538907305,0.01,False
