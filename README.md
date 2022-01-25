@@ -39,7 +39,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here's a blank template to get started:
+High concentrations of particulate matter have been measured in several subway networks worldwide. In Stockholm, Sweden, commuting by subway is a popular mode of transportation, which raises concerns about the potential adverse health effects of the underground air for both passengers and metro workers. This study aims to measure particulate matter (PM) and ultrafine particle number concentration (UFP) at 20 stations along the Green Line in the Stockholm subway. Measurements were taken using two different sensor types by repeatedly jumping on and off the platforms. A custom mobile application and an extensive data- and statistical analysis were used to collect and analyze the data. It was found that indoor stations had significantly higher PM2.5 levels and contained fewer but larger particles than outdoor stations. Stations Hötorget, T-Centralen, and Rådmansgatan had the highest PM2.5 means. The highest UFP number concentration was recorded at the outdoor station Kristineberg. These findings highlight the importance of investigating subway air quality and show potential to aid future research into this relevant topic.
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -61,10 +61,16 @@ To get a local copy up and running follow these simple steps.
 
 The project is organized into folders:
 
+- **data**: raw and sorted data from the sensors used in the experiments
+- **docs**: "read-the-docs" style generated documentation
+- **results**: graphs, tables, and computations
+- **scripts**: iPython Jupyter Notebooks containing all analysis code
+- **src**: reusable python scripts with modular functions
+
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+All data is found under the **data** folder. To reproduce the results and graphs, use the notebooks in the **scripts** folder. Feel free to play around with the data and graphs!
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
@@ -85,7 +91,6 @@ Project Link: [https://github.com/aliceheiman/air-pollution-stockholm-subway](ht
 
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
+## Additional Links
 
-* []()
-* []()
+* [https://www.open-seneca.org/](https://www.open-seneca.org/)
