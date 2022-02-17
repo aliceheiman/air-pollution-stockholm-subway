@@ -1,4 +1,4 @@
-,Session Id,Category,param,n1,n2,p-value,a,significant difference
+,Station,Category,param,n1,n2,p-value,a,significant difference
 0,Islandstorget,DateSplit,PM2.5,2,2,0.46638803875950463,0.01,False
 1,Angbyplan,DateSplit,PM2.5,1,1,,0.01,False
 2,Åkeshov,DateSplit,PM2.5,6,3,0.1966981772281209,0.01,False

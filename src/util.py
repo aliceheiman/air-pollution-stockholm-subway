@@ -134,3 +134,41 @@ def get_green_line():
     ]
 
     return green_line
+
+
+def get_outside_stations():
+    """Returns a list of outside stations."""
+
+    outside_stations = [
+        "Islandstorget",
+        "Angbyplan",
+        "Åkeshov",
+        "Brommaplan",
+        "Abrahamsberg",
+        "Stora mossen",
+        "Alvik",
+        "Kristineberg",
+        "Thorildsplan",
+        "Gamla Stan",
+        "Gullmarsplan",
+    ]
+
+    return outside_stations
+
+
+def get_inside_stations():
+    """Returns a list of inside stations."""
+
+    green_line = [
+        "Fridhemsplan",
+        "St Eriksplan",
+        "Odenplan",
+        "Rådmansgatan",
+        "Hötorget",
+        "T-Centralen",
+        "Slussen",
+        "Medborgarplatsen",
+        "Skanstull",
+    ]
+
+    return green_line
