@@ -7,9 +7,6 @@
   <p align="center">
     Research project mapping the air pollution in the Stockholm subway.
     <br />
-    <a href="https://github.com/aliceheiman/air-pollution-stockholm-subway"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
     <a href="https://github.com/aliceheiman/air-pollution-stockholm-subway/issues">Report Bug</a>
     ·
     <a href="https://github.com/aliceheiman/air-pollution-stockholm-subway/issues">Request Feature</a>
@@ -112,7 +109,7 @@ Distributed under the MIT License. See `LICENSE` for more information. If using 
 <!-- CONTACT -->
 ## Contact
 
-Alice Heiman - kod@heiman.se
+Alice Heiman - aheiman@stanford.edu
 
 Project Link: [https://github.com/aliceheiman/air-pollution-stockholm-subway](https://github.com/aliceheiman/air-pollution-stockholm-subway)
 
